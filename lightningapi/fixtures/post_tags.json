@@ -1,0 +1,42 @@
+[
+    {
+        "model": "lightningapi.post_tag",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "tag": 2
+        }
+    },
+    {
+        "model": "lightningapi.post_tag",
+        "pk": 2,
+        "fields": {
+            "post": 1,
+            "tag": 3
+        }
+    },
+    {
+        "model": "lightningapi.post_tag",
+        "pk": 3,
+        "fields": {
+            "post": 1,
+            "tag": 1
+        }
+    },
+    {
+        "model": "lightningapi.post_tag",
+        "pk": 4,
+        "fields": {
+            "post": 2,
+            "tag": 4
+        }
+    },
+    {
+        "model": "lightningapi.post_tag",
+        "pk": 5,
+        "fields": {
+            "post": 3,
+            "tag": 4
+        }
+    }
+]

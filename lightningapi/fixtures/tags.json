@@ -1,0 +1,51 @@
+[
+    {
+        "model": "lightningapi.tag",
+        "pk": 1,
+        "fields": {
+            "label": "Cool"
+        }
+    },
+    {
+        "model": "lightningapi.tag",
+        "pk": 2,
+        "fields": {
+            "label": "Sucks"
+        }
+    },
+    {
+        "model": "lightningapi.tag",
+        "pk": 3,
+        "fields": {
+            "label": "Rad"
+        }
+    },
+    {
+        "model": "lightningapi.tag",
+        "pk": 4,
+        "fields": {
+            "label": "Blows big time"
+        }
+    },
+    {
+        "model": "lightningapi.tag",
+        "pk": 5,
+        "fields": {
+            "label": "Feats of Strength"
+        }
+    },
+    {
+        "model": "lightningapi.tag",
+        "pk": 6,
+        "fields": {
+            "label": "Sacred Rites and Rituals"
+        }
+    },
+    {
+        "model": "lightningapi.tag",
+        "pk": 7,
+        "fields": {
+            "label": "Blessed Assurance"
+        }
+    }
+]
