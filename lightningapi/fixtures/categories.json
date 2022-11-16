@@ -1,6 +1,30 @@
 [
     {
         "model": "lightningapi.category",
-        "pk": 
+        "pk": 1,
+        "fields": {
+            "label": "Health"
+        }
+    },
+    {
+        "model": "lightningapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "Sports"
+        }
+    },
+    {
+        "model": "lightningapi.category",
+        "pk": 3,
+        "fields": {
+            "label": "Fashion"
+        }
+    },
+    {
+        "model": "lightningapi.category",
+        "pk": 4,
+        "fields": {
+            "label": "Movies"
+        }
     }
 ]

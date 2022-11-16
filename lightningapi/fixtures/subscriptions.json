@@ -1,0 +1,29 @@
+[
+    {
+        "model": "lightningapi.subscription",
+        "pk": 1,
+        "fields": {
+            "follower": 1,
+            "author": 3,
+            "created_on": "2022-10-25"
+        }
+    },
+    {
+        "model": "lightningapi.subscription",
+        "pk": 2,
+        "fields": {
+            "follower": 2,
+            "author": 1,
+            "created_on": "2022-10-16"
+        }
+    },
+    {
+        "model": "lightningapi.subscription",
+        "pk": 3,
+        "fields": {
+            "follower": 3,
+            "author": 2,
+            "created_on": "2022-10-02"
+        }
+    }
+]
