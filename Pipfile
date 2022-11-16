@@ -4,6 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+<<<<<<< HEAD
+=======
+django = "*"
+autopep8 = "*"
+pylint = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+pylint-django = "*"
+>>>>>>> 7afe4578d769fc3e6d8c7595772d97db0436f0b7
 
 [dev-packages]
 
