@@ -7,5 +7,5 @@ class RareUser(models.Model):
     profile_img_url = models.CharField(max_length=100, null=True)
     created_on = models.DateTimeField()
     active = models.BooleanField()
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user')
 
