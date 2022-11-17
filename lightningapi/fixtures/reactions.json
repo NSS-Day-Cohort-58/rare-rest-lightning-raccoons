@@ -1,0 +1,30 @@
+[
+    {
+        "model": "lightningapi.reaction",
+        "pk": 1,
+        "fields": {
+            "emoji": "😃"
+        }
+    },
+    {
+        "model": "lightningapi.reaction",
+        "pk": 2,
+        "fields": {
+            "emoji": "🤑"
+        }
+    },
+    {
+        "model": "lightningapi.reaction",
+        "pk": 3,
+        "fields": {
+            "emoji": "🤮"
+        }
+    },
+    {
+        "model": "lightningapi.reaction",
+        "pk": 4,
+        "fields": {
+            "emoji": "☹️"
+        }
+    }
+]

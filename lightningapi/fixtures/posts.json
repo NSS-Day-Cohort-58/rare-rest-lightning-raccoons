@@ -34,19 +34,21 @@
             "title": "Don't Breathe",
             "publication_date": "2022-11-13",
             "image": "https://www.imdb.com/title/tt4160708/mediaviewer/rm330172416/?ref_=tt_ov_i",
-            "content": "Incredibly tense!"
+            "content": "Incredibly tense!",
+            "approved": true
         }
     },
     {
         "model": "lightningapi.post",
         "pk": 4,
         "fields": {
-            "user": 1,
+            "user": 2,
             "category": 2,
             "title": "Philly Phanatic Problematic",
             "publication_date": "2022-11-12",
             "image": "https://ballparkdigest.com/wp-content/uploads/2021/11/philliephanatic.jpg",
-            "content": "Many are saying the Phanatic is notorious for aggressive, uninvited advances. It must be stopped."
+            "content": "Many are saying the Phanatic is notorious for aggressive, uninvited advances. It must be stopped.",
+            "approved": true
         }
     }
 ]

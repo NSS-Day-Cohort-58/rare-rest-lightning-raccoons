@@ -1,9 +1,8 @@
 from django.db import models
 from .post import Post
-from django.contrib.auth.models import User
+from lightningapi.models.rare_user import RareUser
 
-
-class Comments(models.Model):
-    author = models.OneToOneField(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+class Comment(models.Model):
+    author = models.ForeignKey(RareUser, on_delete=models.CASCADE, related_name='comment')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comment')
     content = models.TextField()

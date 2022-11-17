@@ -1,0 +1,20 @@
+[
+    {
+        "model": "lightningapi.rareuser",
+        "pk": 1,
+        "fields": {
+            "user":1,
+            "bio": "Don't cut me mister! I'll do anything!",
+            "profile_img_url": "https://tv-fanatic-res.cloudinary.com/iu/s--carwKx1---/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1371134886/jimbo-jones-picture.png"
+        }
+    },
+    {
+        "model": "lightningapi.rareuser",
+        "pk": 2,
+        "fields": {
+            "user":2,
+            "bio": "A gym? What's a gym?",
+            "profile_img_url": "https://www.looper.com/img/gallery/homer-simpsons-backstory-explained/intro-1568401380.jpg"
+        }
+    }
+]
