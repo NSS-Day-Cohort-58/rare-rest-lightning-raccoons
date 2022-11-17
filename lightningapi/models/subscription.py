@@ -1,10 +1,9 @@
 from django.db import models
 from .post import Post
 from .reaction import Reaction
-from django.contrib.auth.models import User
-
+from lightningapi.models.rare_user import RareUser
 
 class Subscription(models.Model):
-    follower = models.ForeignKey(User, on_delete=models.CASCADE)
-    author = models.OneToOneField(User, on_delete=models.CASCADE)
+    follower = models.ForeignKey(RareUser, on_delete=models.CASCADE, related_name='follower')
+    author = models.ForeignKey(RareUser, on_delete=models.CASCADE, related_name='author')
     created_on = models.DateTimeField()

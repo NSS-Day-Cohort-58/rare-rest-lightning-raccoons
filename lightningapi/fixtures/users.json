@@ -1,30 +1,39 @@
 [
     {
-        "model": "auth.user",
-        "pk": 1,
-        "fields": {
-            "first_name": "Jimbo",
-            "last_name": "Jones",
-            "email": "Jimbo.Jones@gmail.com",
-            "username": "JimboRulez",
-            "password": "Jones",
-            "profile_image_url": "https://tv-fanatic-res.cloudinary.com/iu/s--carwKx1---/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1371134886/jimbo-jones-picture.png",
-            "created_on": "2022-10-30",
-            "active": true
-        }
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "JimboRulez",
+        "first_name": "Jimbo",
+        "last_name": "Jones",
+        "email": "Jimbo.Jones@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-08-28T14:51:39.989Z",
+        "groups": [],
+        "user_permissions": []
+      }
     },
     {
         "model": "auth.user",
         "pk": 2,
         "fields": {
-            "first_name": "Homer",
-            "last_name": "Simpson",
-            "email": "Homer.Simpson@gmail.com",
-            "username": "JoeyShabadoo",
-            "password": "Sprinkles",
-            "profile_image_url": "https://www.looper.com/img/gallery/homer-simpsons-backstory-explained/intro-1568401380.jpg",
-            "created_on": "2022-10-20",
-            "active": true
+          "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+          "last_login": null,
+          "is_superuser": false,
+          "username": "JoeyShabadoo",
+          "first_name": "Homer",
+          "last_name": "Simpson",
+          "email": "Homer.Simpson@gmail.com",
+          "is_staff": false,
+          "is_active": true,
+          "date_joined": "2020-08-28T14:51:39.989Z",
+          "groups": [],
+          "user_permissions": []
         }
-    }
-]
+      }
+  ]
+  

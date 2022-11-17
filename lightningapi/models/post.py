@@ -1,11 +1,10 @@
 from django.db import models
 from .category import Category
-from django.contrib.auth.models import User
-
+from lightningapi.models.rare_user import RareUser
 
 class Post(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    user = models.ForeignKey(RareUser, on_delete=models.CASCADE, related_name='post')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="post")
     title = models.CharField(max_length=255)
     publication_date = models.DateField()
     image = models.CharField(max_length=255, null=True)

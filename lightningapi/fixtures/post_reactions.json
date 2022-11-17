@@ -1,0 +1,30 @@
+[
+    {
+        "model": "lightningapi.postreaction",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "reaction": 1,
+            "post": 1
+        }
+    },
+    {
+        "model": "lightningapi.postreaction",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "reaction": 3,
+            "post": 1
+        }
+    },
+    {
+        "model": "lightningapi.postreaction",
+        "pk": 3,
+        "fields": {
+            "user": 2,
+            "reaction": 4,
+            "post": 1
+        }
+    }
+
+]
