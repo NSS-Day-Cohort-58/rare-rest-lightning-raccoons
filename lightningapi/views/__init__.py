@@ -20,4 +20,4 @@ from .comment_view import CommentView
 from .postreaction_view import PostReaction
 
 # ===== SUBSCRIPTIONS ===== #
-from .subscription_view import Subscription
+from .subscription_view import SubscriptionView
