@@ -1,0 +1,39 @@
+[
+    {
+        "model": "lightningapi.comment",
+        "pk": 1,
+        "fields": {
+            "author": 2,
+            "post": 2,
+            "content": "Love It!"
+        }
+    },
+    {
+        "model": "lightningapi.comment",
+        "pk": 2,
+        "fields": {
+            "author": 3,
+            "post": 1,
+            "content": "I guess this is helpful. 5 out of 10"
+        }
+    },
+    {
+        "model": "lightningapi.comment",
+        "pk": 3,
+        "fields": {
+            "author": 4,
+            "post": 2,
+            "content": "You're So Cool!"
+        }
+    },
+    {
+        "model": "lightningapi.comment",
+        "pk": 4,
+        "fields": {
+            "author": 2,
+            "post": 1,
+            "content": "Kinda hated it"
+        }
+    }
+    
+]
