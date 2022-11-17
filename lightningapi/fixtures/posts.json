@@ -8,7 +8,8 @@
             "title": "Barbarian",
             "publication_date": "2022-11-16",
             "image": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2022/09/barbarian-art.jpg?ssl=1",
-            "content": "Barbarian rocks. Go see it. You won't regret it. Brutal, bizarre movie."
+            "content": "Barbarian rocks. Go see it. You won't regret it. Brutal, bizarre movie.",
+            "approved": true
         }
     },
     {
@@ -20,7 +21,8 @@
             "title": "Smile",
             "publication_date": "2022-11-14",
             "image": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2022/08/smiledom-online-digital-keyart-zipperv3c-scaled.jpg?ssl=1",
-            "content": "Totally fine. decent. not bad but not good. see it or don't"
+            "content": "Totally fine. decent. not bad but not good. see it or don't",
+            "approved": true
         }
     },
     {

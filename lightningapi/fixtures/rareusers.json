@@ -1,32 +1,25 @@
 [
     {
-        "model": "lightningapi.user",
+        "model": "lightningapi.rareuser",
         "pk": 1,
         "fields": {
-            "first_name": "Jimbo",
-            "last_name": "Jones",
-            "email": "Jimbo.Jones@gmail.com",
             "bio": "Don't cut me mister! I'll do anything!",
-            "username": "JimboRulez",
-            "password": "Jones",
             "profile_image_url": "https://tv-fanatic-res.cloudinary.com/iu/s--carwKx1---/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1371134886/jimbo-jones-picture.png",
             "created_on": "2022-10-30",
-            "active": true
+            "active": true,
+            "user_id":1
+
         }
     },
     {
-        "model": "lightningapi.user",
+        "model": "lightningapi.rareuser",
         "pk": 2,
         "fields": {
-            "first_name": "Homer",
-            "last_name": "Simpson",
-            "email": "Homer.Simpson@gmail.com",
             "bio": "A gym? What's a gym?",
-            "username": "JoeyShabadoo",
-            "password": "Sprinkles",
             "profile_image_url": "https://www.looper.com/img/gallery/homer-simpsons-backstory-explained/intro-1568401380.jpg",
             "created_on": "2022-10-20",
-            "active": true
+            "active": true,
+            "user_id":2
         }
     }
 ]
