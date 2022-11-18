@@ -3,7 +3,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from lightningapi.models import Category
+from lightningapi.models import Category, RareUser
 
 
 class CategoryView(ViewSet):
@@ -30,6 +30,22 @@ class CategoryView(ViewSet):
         category = Category.objects.get(pk=pk)
         serialized = CategorySerializer(category, context={'request': request})
         return Response(serialized.data, status=status.HTTP_200_OK)
+
+    def create(self, request):
+        """ Handles POST operations
+
+        Returns
+            Response -- JSON serialized category instance
+        """
+        # Getting the user that is logged in
+        user = RareUser.objects.get(user=request.auth.user)
+
+        # Creating a new category
+        category = Category.objects.create(
+            label=request.data['label'],
+        )
+        serializer = CategorySerializer(category)
+        return Response(serializer.data)
 
 
 class CategorySerializer(serializers.ModelSerializer):
