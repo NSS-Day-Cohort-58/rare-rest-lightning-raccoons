@@ -1,40 +1,71 @@
-"""View module for handling requests for post data"""
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from lightningapi.models import Post
+from lightningapi.models import Category
+from lightningapi.models import RareUser
 
 
 class PostView(ViewSet):
-    """Lighting Raccoon API post view"""
+    def retrieve(self, request, pk):
+        post = Post.objects.get(pk=pk)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
 
     def list(self, request):
-        """Handle GET requests to get all Posts
+        post = Post.objects.all()
+        serializer = PostSerializer(post, many=True)
+        return Response(serializer.data)
+
+    def create(self, request):
+        """Handle POST operations
+
+        Returns
+            Response -- JSON serialized Post instance
+        """
+        user = RareUser.objects.get(pk=request.data["user"])
+        category = Category.objects.get(pk=request.data["category"])
+        
+        post = Post.objects.create(
+            user = user,
+            category = category,
+            title = request.data["title"],
+            publication_date = request.data["publication_date"],
+            image=request.data["image"],
+            content=request.data["content"],
+            approved = request.data["approved"]
+        )
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+    
+    def update(self, request, pk):
+        """Handle PUT requests for a Post
 
         Returns:
-            Response -- JSON serialized list of Posts
+            Response -- Empty body with 204 status code
         """
+        
+        editing_post = Post.objects.get(pk=pk)
+        editing_post.category = Category.objects.get(pk=request.data["category"])
+        editing_post.title = request.data["title"]
+        editing_post.image=request.data["image"]
+        editing_post.content=request.data["content"]
+        editing_post.approved = request.data["approved"]
+        editing_post.save()
 
-        posts = Post.objects.all()
-        serialized = PostSerializer(posts, many=True)
-        return Response(serialized.data, status=status.HTTP_200_OK)
-
-    def retrieve(self, request, pk=None):
-        """Handle GET requests for single post
-
-        Returns:
-            Response -- JSON serialized post record
-        """
-
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    def destroy(self, request, pk):
         post = Post.objects.get(pk=pk)
-        serialized = PostSerializer(post, context={'request': request})
-        return Response(serialized.data, status=status.HTTP_200_OK)
+        post.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 
 class PostSerializer(serializers.ModelSerializer):
-    """JSON serializer for posts"""
+    """JSON serializer for Post types
+    """
     class Meta:
         model = Post
-        fields = ('id', 'userId', 'categoryId', 'title',
-                  'publicationDate', 'imageURL', 'content', 'approved')
+        fields = ('id', 'category', 'title', 'publication_date','image','content','approved')
+        depth = 2
