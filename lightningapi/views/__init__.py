@@ -8,7 +8,7 @@ from .category_view import CategoryView
 from .tag_view import TagView
 
 # ===== USERS ===== #
-from .user_view import UserView
+from .user_view import RareUserView
 
 # ===== POSTS ===== #
 from .post_view import PostView
