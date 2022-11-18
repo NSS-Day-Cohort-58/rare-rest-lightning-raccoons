@@ -3,10 +3,10 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from lightningapi.models import User
+from lightningapi.models import RareUser
 
 
-class UserView(ViewSet):
+class RareUserView(ViewSet):
     """Lightning Raccoons API users view"""
 
     def list(self, request):
@@ -16,8 +16,8 @@ class UserView(ViewSet):
             Response -- JSON serialized list of users
         """
 
-        users = User.objects.all()
-        serialized = UserSerializer(users, many=True)
+        users = RareUser.objects.all()
+        serialized = RareUserSerializer(users, many=True)
         return Response(serialized.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk=None):
@@ -27,14 +27,14 @@ class UserView(ViewSet):
             Response -- JSON serialized user record
         """
 
-        user = User.objects.get(pk=pk)
-        serialized = UserSerializer(user, context={'request': request})
+        user = RareUser.objects.get(pk=pk)
+        serialized = RareUserSerializer(user, context={'request': request})
         return Response(serialized.data, status=status.HTTP_200_OK)
 
 
-class UserSerializer(serializers.ModelSerializer):
+class RareUserSerializer(serializers.ModelSerializer):
     """JSON serializer for users"""
     class Meta:
-        model = User
+        model = RareUser
         fields = ('id', 'firstName', 'lastName', 'email', 'bio', 'username',
                   'password', 'profileImageURL', 'createdOn', 'active')

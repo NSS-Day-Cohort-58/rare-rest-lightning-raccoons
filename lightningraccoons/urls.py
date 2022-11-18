@@ -18,16 +18,16 @@ from django.conf.urls import include
 from rest_framework import routers
 from django.urls import path
 from lightningapi.views import register_user, login_user, CategoryView, CommentView, PostView, PostReaction
-from lightningapi.views import SubscriptionView, TagView, UserView
+from lightningapi.views import SubscriptionView, TagView, RareUserView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'categories', CategoryView, 'category')
 router.register(r'comments', CommentView, 'comment')
 router.register(r'posts', PostView, 'post')
-router.register(r'reactions', PostReaction, 'reaction')
+# router.register(r'reactions', PostReaction, 'reaction')
 router.register(r'subscriptions', SubscriptionView, 'subscription')
 router.register(r'tags', TagView, 'tag')
-router.register(r'users', UserView, 'user')
+router.register(r'rare_users', RareUserView, 'rare_user')
 
 urlpatterns = [
     path('register', register_user),

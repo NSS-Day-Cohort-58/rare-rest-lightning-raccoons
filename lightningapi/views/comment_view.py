@@ -3,7 +3,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from lightningapi.models import Comments
+from lightningapi.models import Comment
 
 
 class CommentView(ViewSet):
@@ -35,5 +35,5 @@ class CommentView(ViewSet):
 class CommentSerializer(serializers.ModelSerializer):
     """JSON serializer for comments"""
     class Meta:
-        model = Comments
+        model = Comment
         fields = ('id', 'author', 'post', 'content')
