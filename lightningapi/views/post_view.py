@@ -63,27 +63,15 @@ class PostView(ViewSet):
         post.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
-# class PostUserSerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = User
-#         fields = ('username', )
-
-# class PostCategorySerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = Category
-#         fields = ('label', )
 
 
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for Post types
     """
-    # category = PostCategorySerializer(many=False)
-    # user = PostUserSerializer(many=False)
 
     class Meta:
         model = Post
         fields = ('id', 'user', 'category', 'title',
                   'publication_date', 'image', 'content', 'approved')
         depth = 2
+        
