@@ -4,8 +4,10 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from lightningapi.models import Post
 from lightningapi.models import Category
-from lightningapi.models import RareUser
+from lightningapi.models import RareUser, Tag
 from django.contrib.auth.models import User
+from rest_framework.decorators import action
+
 
 
 class PostView(ViewSet):
@@ -15,8 +17,18 @@ class PostView(ViewSet):
         return Response(serializer.data)
 
     def list(self, request):
-        post = Post.objects.all()
-        serializer = PostSerializer(post, many=True)
+        posts = Post.objects.all()
+
+        if "tag" in request.query_params:
+            posts = Post.objects.filter(tags__in == request.query_params['tag'])
+            
+            
+
+        # if "tag" in request.query_params:
+        #     query_value = request.query_params['tag']
+        #     posts = posts.filter(post.tag = query_value)
+        
+        serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
 
     def create(self, request):
@@ -58,20 +70,33 @@ class PostView(ViewSet):
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+    @action(methods=['post'], detail=True)
+    def addTag(self, request, pk):
+    
+        tag = Tag.objects.get(pk=request.data["tag_id"])
+        post = Post.objects.get(pk=request.data["post_id"])
+        post.tags.add(tag)
+
+        return Response({'message': 'Tag added'}, status=status.HTTP_201_CREATED)
+
     def destroy(self, request, pk):
         post = Post.objects.get(pk=pk)
         post.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+# class PostTagSerializer(serializers.ModelSerializer):
 
+#     class Meta: Tag
+#     fields = ('id', 'label', )
 
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for Post types
     """
+    # tags = PostTagSerializer(many=True)
 
     class Meta:
         model = Post
         fields = ('id', 'user', 'category', 'title',
-                  'publication_date', 'image', 'content', 'approved')
+                  'publication_date', 'image', 'content', 'approved', 'tags', )
         depth = 2
         
