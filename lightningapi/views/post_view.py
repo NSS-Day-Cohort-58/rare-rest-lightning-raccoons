@@ -20,7 +20,7 @@ class PostView(ViewSet):
         posts = Post.objects.all()
 
         if "tag" in request.query_params:
-            posts = Post.objects.filter(tags__in == request.query_params['tag'])
+            posts = Post.objects.filter(tags__in = request.query_params['tag'])
             
             
 
